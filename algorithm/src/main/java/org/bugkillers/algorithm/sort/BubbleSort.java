@@ -25,7 +25,7 @@ public class BubbleSort {
 	 * 时间复杂度是O（n²）
 	 */
 	private static void bubble() {
-		Integer array[] = { 97, 9, 15, 87, 109, 90, 99, 100 };
+		Integer array[] = {49,38,65,97,76,13,27,49,78,34,12,64,5,4,62,99,98,54,56,17,18,23,34,15,35,25,53,51};
 		// 最多只做n-1次循环
 		for (int i = 0; i < array.length - 1; i++) {
 			// 范围逐步缩小，两两交换比较
@@ -41,6 +41,9 @@ public class BubbleSort {
 	}
 
 	public static void main(String args[]) {
+		long begin = System.currentTimeMillis();
 		bubble();
+		long end = System.currentTimeMillis();
+		System.out.println(end-begin);
 	}
 }
