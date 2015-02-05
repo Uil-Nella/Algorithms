@@ -1,4 +1,4 @@
-package org.gradle;
+package org.bugkillers.algorithm;
 
 import org.bugkillers.algorithm.Person;
 import org.junit.Test;
