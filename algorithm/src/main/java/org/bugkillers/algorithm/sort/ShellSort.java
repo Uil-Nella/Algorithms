@@ -7,22 +7,22 @@ import java.util.Arrays;
  * 然后再用一个较小的增量（d/2）对它进行分组，在每组中再进行直接插入排序。当增量减到1时，进行直接插入排序后，排序完成。
  * <p/>
  * <p>
+ * 
  * @author 刘新宇
  *
- * <p>
+ *         <p>
  * @date 2015年2月6日 下午12:00:51
- * <p>
+ *       <p>
  * @version 0.0.1
  */
 public class ShellSort {
 
-	private static void shell() {
-		Integer array[] = { 49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 5,
-				4, 62, 99, 98, 54, 56, 17, 18, 23, 34, 15, 35, 25, 53, 51 };
+	private static void shell(int array[]) {
 		double d1 = array.length;
 		int temp = 0;
 		while (true) {
-			int d = (int) Math.ceil(d1 / 2);
+			d1 = Math.ceil(d1 / 2);
+			int d = (int) d1;
 			for (int x = 0; x < d; x++) {
 				for (int i = x + d; i < array.length; i += d) {
 					int j = i - d;
@@ -36,12 +36,18 @@ public class ShellSort {
 			if (d == 1)
 				break;
 		}
-		System.out.println(Arrays.asList(array));
+		System.out.println(Arrays.toString(array));
 	}
 
 	public static void main(String[] args) {
+		int array[] = { 49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 5, 4,
+				62, 99, 98, 54, 56, 17, 18, 23, 34, 15, 35, 25, 53, 51 };
+		sort(array);
+	}
+	
+	private static void sort(int array[]){
 		long begin = System.currentTimeMillis();
-		shell();
+		shell(array);
 		long end = System.currentTimeMillis();
 		System.out.println(end - begin);
 	}

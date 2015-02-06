@@ -7,17 +7,18 @@ import java.util.Arrays;
  * 也是排好顺序的。如此反复循环，直到全部排好顺序。
  * <p/>
  * <p>
+ * 
  * @author 刘新宇
  *
- * <p>
+ *         <p>
  * @date 2015年2月6日 上午8:42:36
- * <p>
+ *       <p>
  * @version 0.0.1
  */
 public class InsertSort {
 
 	private static void insert(int array[]) {
-		
+
 		// 假设第一位之前已经排好序，一次从第二位做插判断入
 		for (int i = 1; i < array.length; i++) {
 			int j = i - 1;
@@ -28,15 +29,20 @@ public class InsertSort {
 			}
 			array[j + 1] = temp;
 		}
+		System.out.println(Arrays.toString(array));
 	}
 
 	public static void main(String[] args) {
-		int array[] = { 49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 5,
-				4, 62, 99, 98, 54, 56, 17, 18, 23, 34, 15, 35, 25, 53, 51 };
+		int array[] = { 49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 5, 4,
+				62, 99, 98, 54, 56, 17, 18, 23, 34, 15, 35, 25, 53, 51 };
+		sort(array);
+	}
+
+	private static void sort(int array[]) {
 		long begin = System.currentTimeMillis();
 		insert(array);
 		long end = System.currentTimeMillis();
-		System.out.println(Arrays.toString(array));
 		System.out.println(end - begin);
+
 	}
 }

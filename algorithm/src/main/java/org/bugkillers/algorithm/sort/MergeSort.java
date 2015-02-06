@@ -16,19 +16,27 @@ import java.util.Arrays;
  */
 public class MergeSort {
 
-	public static void sort(int[] data, int left, int right) {
+	public static void sort0(int[] data, int left, int right) {
 		// TODO Auto-generated method stub
 		if (left < right) {
 			// 找出中间索引
 			int center = (left + right) / 2;
 			// 对左边数组进行递归
-			sort(data, left, center);
+			sort0(data, left, center);
 			// 对右边数组进行递归
-			sort(data, center + 1, right);
+			sort0(data, center + 1, right);
 			// 合并
 			merge(data, left, center, right);
 
 		}
+		
+	}
+	public static void sort(int array[]){
+		long begin = System.currentTimeMillis();
+		sort0(array, 0, array.length - 1);
+		long end = System.currentTimeMillis();
+		System.out.println(Arrays.toString(array));
+		System.out.println(end - begin);
 	}
 
 	public static void merge(int[] data, int left, int center, int right) {
@@ -57,14 +65,14 @@ public class MergeSort {
 		while (tmp <= right) {
 			data[tmp] = tmpArr[tmp++];
 		}
-		System.out.println(Arrays.toString(data));
+		
 	}
 
 	public static void main(String[] args) {
 		int array[] = { 49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 5, 4,
 				62, 99, 98, 54, 56, 17, 18, 23, 34, 15, 35, 25, 53, 51 };
-		sort(array, 0, array.length - 1);
-		System.out.println(Arrays.toString(array));
+		sort(array);
+		
 	}
 
 }

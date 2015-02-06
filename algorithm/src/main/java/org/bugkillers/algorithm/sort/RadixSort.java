@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class RadixSort {
 
-	public static void sort(int[] array) {
+	public static void radix(int[] array) {
 		// 首先确定排序的趟数;
 		int max = array[0];
 		for (int i = 1; i < array.length; i++) {
@@ -60,15 +60,18 @@ public class RadixSort {
 				}
 			}
 		}
+		System.out.println(Arrays.toString(array));
 	}
 
 	public static void main(String[] args) {
 		int array[] = { 49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 5, 4,
 				62, 99, 98, 54, 101, 56, 17, 18, 23, 34, 15, 35, 25, 53, 51 };
-		long begin = System.currentTimeMillis();
 		sort(array);
+	}
+	private static void sort(int array[]){
+		long begin = System.currentTimeMillis();
+		radix(array);
 		long end = System.currentTimeMillis();
-		System.out.println(Arrays.toString(array));
 		System.out.println(end - begin);
 	}
 

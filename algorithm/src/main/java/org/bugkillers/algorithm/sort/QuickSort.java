@@ -1,5 +1,7 @@
 package org.bugkillers.algorithm.sort;
 
+import java.util.Arrays;
+
 /**
  * 快速排序 
  * 基本思想：选择一个基准元素,通常选择第一个元素或者最后一个元素,通过一趟扫描，将待排序列分成两部分,一部分比基准元素小,一部分大于等于基准元素,
@@ -16,7 +18,7 @@ package org.bugkillers.algorithm.sort;
  */
 public class QuickSort {
 
-	public static int getMiddle(Integer[] array, int low, int high) {
+	public static int getMiddle(int[] array, int low, int high) {
 		int tmp = array[low]; // 数组的第一个作为中轴
 		while (low < high) {
 			while (low < high && array[high] >= tmp) {
@@ -32,7 +34,7 @@ public class QuickSort {
 		return low; // 返回中轴的位置
 	}
 
-	public static void _quickSort(Integer[] array, int low, int high) {
+	public static void _quickSort(int[] array, int low, int high) {
 		if (low < high) {
 			int middle = getMiddle(array, low, high); // 将list数组进行一分为二
 			_quickSort(array, low, middle - 1); // 对低字表进行递归排序
@@ -40,15 +42,19 @@ public class QuickSort {
 		}
 	}
 
-	public static void quick(Integer[] array) {
+	public static void quick(int[] array) {
 		if (array.length > 0) { // 查看数组是否为空
 			_quickSort(array, 0, array.length - 1);
 		}
+		System.out.println(Arrays.toString(array));
 	}
 
 	public static void main(String[] args) {
-		Integer array[] = { 49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 5,
+		int array[] = { 49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 5,
 				4, 62, 99, 98, 54, 56, 17, 18, 23, 34, 15, 35, 25, 53, 51 };
+		sort(array);
+	}
+	private static void sort(int array[]){
 		long begin = System.currentTimeMillis();
 		quick(array);
 		long end = System.currentTimeMillis();
