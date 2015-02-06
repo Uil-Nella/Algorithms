@@ -16,10 +16,8 @@ import java.util.Arrays;
  */
 public class InsertSort {
 
-	private static void insert() {
-		Integer array[] = { 49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 5,
-				4, 62, 99, 98, 54, 56, 17, 18, 23, 34, 15, 35, 25, 53, 51 };
-		System.out.println(Arrays.asList(array));
+	private static void insert(int array[]) {
+		
 		// 假设第一位之前已经排好序，一次从第二位做插判断入
 		for (int i = 1; i < array.length; i++) {
 			int j = i - 1;
@@ -29,16 +27,16 @@ public class InsertSort {
 				array[j + 1] = array[j];
 			}
 			array[j + 1] = temp;
-			System.out.println(Arrays.asList(array));
 		}
-
-		System.out.println(Arrays.asList(array));
 	}
 
 	public static void main(String[] args) {
+		int array[] = { 49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 5,
+				4, 62, 99, 98, 54, 56, 17, 18, 23, 34, 15, 35, 25, 53, 51 };
 		long begin = System.currentTimeMillis();
-		insert();
+		insert(array);
 		long end = System.currentTimeMillis();
+		System.out.println(Arrays.toString(array));
 		System.out.println(end - begin);
 	}
 }

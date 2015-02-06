@@ -1,6 +1,5 @@
 package org.bugkillers.algorithm.sort;
 
-import java.util.Arrays;
 
 /**
  * 选择排序 基本思想：在要排序的一组数中，选出最小的一个数与第一个位置的数交换；
@@ -15,9 +14,8 @@ import java.util.Arrays;
  * @version 0.0.1
  */
 public class SelectSort {
-	private static void select() {
-		Integer array[] = { 49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 5,
-				4, 62, 99, 98, 54, 56, 17, 18, 23, 34, 15, 35, 25, 53, 51 };
+	private static void select(int array[]) {
+		
 		// 默认寻找最小值的位置
 		int position = 0;
 		for (int i = 0; i < array.length; i++) {
@@ -31,16 +29,17 @@ public class SelectSort {
 					temp = array[j];
 					position = j;
 				}
-			}
+			}	
 			array[position] = array[i];
 			array[i] = temp;
 		}
-		System.out.println(Arrays.asList(array));
 	}
 
 	public static void main(String[] args) {
+		int array[] = { 49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 5,
+				4, 62, 99, 98, 54, 56, 17, 18, 23, 34, 15, 35, 25, 53, 51 };
 		long begin = System.currentTimeMillis();
-		select();
+		select(array);
 		long end = System.currentTimeMillis();
 		System.out.println(end - begin);
 	}
