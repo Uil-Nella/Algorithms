@@ -2,3 +2,6 @@
 /.project
 /bin/
 /build/
+.gradle/2.3/
+build/
+Algorithms.iml
