@@ -4,13 +4,13 @@ import java.io.*;
 
 public class BitSort {
 	/**
-	 * Î»Í¼ÅÅĞòËã·¨
-	 * 
+	 * ä½å›¾æ’åºç®—æ³•
+	 *
 	 * @param args
 	 */
 
-	private String fileIn;// ¶ÁÈëÊı¾İµÄÎÄ¼ş
-	private String fileOut;// Ğ´ÈëÊı¾İµÄÎÄ¼ş
+	private String fileIn;// è¯»å…¥æ•°æ®çš„æ–‡ä»¶
+	private String fileOut;// å†™å…¥æ•°æ®çš„æ–‡ä»¶
 
 	public BitSort(String fileIn, String fileOut) {
 		this.fileIn = fileIn;
@@ -18,13 +18,13 @@ public class BitSort {
 	}
 
 	/**
-	 * ´ÓfileInÖĞ¶ÁÈ¡Êı¾İ£¬ÅÅºÃĞòºó£¬½«ÅÅºÃĞòµÄÊı¾İĞ´ÈëfileOutÖĞ¡£
-	 * 
+	 * ä»fileInä¸­è¯»å–æ•°æ®ï¼Œæ’å¥½åºåï¼Œå°†æ’å¥½åºçš„æ•°æ®å†™å…¥fileOutä¸­ã€‚
+	 *
 	 * @throws IOException
 	 */
 	public void sort(Bit bit) throws IOException {
-		FileReader fin = new FileReader(this.fileIn);// ½¨Á¢ÎÄ¼ş×Ö·ûÊäÈëÁ÷
-		BufferedReader bin = new BufferedReader(fin);// ½¨Á¢×Ö·û»º³åÊäÈëÁ÷
+		FileReader fin = new FileReader(this.fileIn);// å»ºç«‹æ–‡ä»¶å­—ç¬¦è¾“å…¥æµ
+		BufferedReader bin = new BufferedReader(fin);// å»ºç«‹å­—ç¬¦ç¼“å†²è¾“å…¥æµ
 
 		FileWriter fout = new FileWriter(this.fileOut);
 		BufferedWriter bout = new BufferedWriter(fout);
@@ -36,14 +36,14 @@ public class BitSort {
 				int pos = Integer.parseInt(line);
 				bit.set1(pos);
 			}
-		} while (line != null);// ¶ÁÈ¡Ã¿Ò»¸öÊı¾İ£¬²¢ÇÒÖÃÏàÓ¦µÄÎ»Îª1£¬Ö±µ½ÎÄ¼şÎ²¡£
+		} while (line != null);// è¯»å–æ¯ä¸€ä¸ªæ•°æ®ï¼Œå¹¶ä¸”ç½®ç›¸åº”çš„ä½ä¸º1ï¼Œç›´åˆ°æ–‡ä»¶å°¾ã€‚
 
-		for (int j = 0; j < bit.getSize(); j++)// ±éÀúÎ»Êı×é£¬Êä³öÏàÓ¦µÄÎ»
+		for (int j = 0; j < bit.getSize(); j++)// éå†ä½æ•°ç»„ï¼Œè¾“å‡ºç›¸åº”çš„ä½
 		{
 			if (bit.get(j)) {
 				line = String.valueOf(j);
 				bout.write(line);
-				bout.newLine();// ²åÈëÒ»¸ö»»ĞĞ·û
+				bout.newLine();// æ’å…¥ä¸€ä¸ªæ¢è¡Œç¬¦
 			}
 		}
 

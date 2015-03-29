@@ -1,9 +1,7 @@
 package org.bugkillers.algorithm.sort.bit;
 
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.io.PrintWriter;
 
 public class MyFileWriter {
