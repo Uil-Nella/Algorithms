@@ -3,14 +3,14 @@ package org.bugkillers.algorithm.sort;
 import java.util.Arrays;
 
 /**
- * ¹é²¢ÅÅÐò »ù±¾ÅÅÐò£º¹é²¢£¨Merge£©ÅÅÐò·¨ÊÇ½«Á½¸ö£¨»òÁ½¸öÒÔÉÏ£©ÓÐÐò±íºÏ²¢³ÉÒ»¸öÐÂµÄÓÐÐò±í£¬¼´°Ñ´ýÅÅÐòÐòÁÐ·ÖÎªÈô¸É¸ö×ÓÐòÁÐ£¬Ã¿¸ö×ÓÐòÁÐÊÇÓÐÐòµÄ¡£
- * È»ºóÔÙ°ÑÓÐÐò×ÓÐòÁÐºÏ²¢ÎªÕûÌåÓÐÐòÐòÁÐ¡£
+ * å½’å¹¶æŽ’åº åŸºæœ¬æŽ’åºï¼šå½’å¹¶ï¼ˆMergeï¼‰æŽ’åºæ³•æ˜¯å°†ä¸¤ä¸ªï¼ˆæˆ–ä¸¤ä¸ªä»¥ä¸Šï¼‰æœ‰åºè¡¨åˆå¹¶æˆä¸€ä¸ªæ–°çš„æœ‰åºè¡¨ï¼Œå³æŠŠå¾…æŽ’åºåºåˆ—åˆ†ä¸ºè‹¥å¹²ä¸ªå­åºåˆ—ï¼Œæ¯ä¸ªå­åºåˆ—æ˜¯æœ‰åºçš„ã€‚
+ * ç„¶åŽå†æŠŠæœ‰åºå­åºåˆ—åˆå¹¶ä¸ºæ•´ä½“æœ‰åºåºåˆ—ã€‚
  * <p/>
  * <p>
- * @author ÁõÐÂÓî
+ * @author åˆ˜æ–°å®‡
  *
  * <p>
- * @date 2015Äê2ÔÂ6ÈÕ ÏÂÎç3:16:04
+ * @date 2015å¹´2æœˆ6æ—¥ ä¸‹åˆ3:16:04
  * <p>
  * @version 0.0.1
  */
@@ -19,17 +19,17 @@ public class MergeSort {
 	public static void sort0(int[] data, int left, int right) {
 		// TODO Auto-generated method stub
 		if (left < right) {
-			// ÕÒ³öÖÐ¼äË÷Òý
+			// æ‰¾å‡ºä¸­é—´ç´¢å¼•
 			int center = (left + right) / 2;
-			// ¶Ô×ó±ßÊý×é½øÐÐµÝ¹é
+			// å¯¹å·¦è¾¹æ•°ç»„è¿›è¡Œé€’å½’
 			sort0(data, left, center);
-			// ¶ÔÓÒ±ßÊý×é½øÐÐµÝ¹é
+			// å¯¹å³è¾¹æ•°ç»„è¿›è¡Œé€’å½’
 			sort0(data, center + 1, right);
-			// ºÏ²¢
+			// åˆå¹¶
 			merge(data, left, center, right);
 
 		}
-		
+
 	}
 	public static void sort(int array[]){
 		long begin = System.currentTimeMillis();
@@ -43,36 +43,36 @@ public class MergeSort {
 		// TODO Auto-generated method stub
 		int[] tmpArr = new int[data.length];
 		int mid = center + 1;
-		// third¼ÇÂ¼ÖÐ¼äÊý×éµÄË÷Òý
+		// thirdè®°å½•ä¸­é—´æ•°ç»„çš„ç´¢å¼•
 		int third = left;
 		int tmp = left;
 		while (left <= center && mid <= right) {
-			// ´ÓÁ½¸öÊý×éÖÐÈ¡³ö×îÐ¡µÄ·ÅÈëÖÐ¼äÊý×é
+			// ä»Žä¸¤ä¸ªæ•°ç»„ä¸­å–å‡ºæœ€å°çš„æ”¾å…¥ä¸­é—´æ•°ç»„
 			if (data[left] <= data[mid]) {
 				tmpArr[third++] = data[left++];
 			} else {
 				tmpArr[third++] = data[mid++];
 			}
 		}
-		// Ê£Óà²¿·ÖÒÀ´Î·ÅÈëÖÐ¼äÊý×é
+		// å‰©ä½™éƒ¨åˆ†ä¾æ¬¡æ”¾å…¥ä¸­é—´æ•°ç»„
 		while (mid <= right) {
 			tmpArr[third++] = data[mid++];
 		}
 		while (left <= center) {
 			tmpArr[third++] = data[left++];
 		}
-		// ½«ÖÐ¼äÊý×éÖÐµÄÄÚÈÝ¸´ÖÆ»ØÔ­Êý×é
+		// å°†ä¸­é—´æ•°ç»„ä¸­çš„å†…å®¹å¤åˆ¶å›žåŽŸæ•°ç»„
 		while (tmp <= right) {
 			data[tmp] = tmpArr[tmp++];
 		}
-		
+
 	}
 
 	public static void main(String[] args) {
 		int array[] = { 49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64, 5, 4,
 				62, 99, 98, 54, 56, 17, 18, 23, 34, 15, 35, 25, 53, 51 };
 		sort(array);
-		
+
 	}
 
 }

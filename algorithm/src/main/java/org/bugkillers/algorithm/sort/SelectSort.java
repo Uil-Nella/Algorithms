@@ -4,34 +4,34 @@ import java.util.Arrays;
 
 
 /**
- * ѡ������ ����˼�룺��Ҫ�����һ�����У�ѡ����С��һ�������һ��λ�õ���������
- * Ȼ����ʣ�µ�������������С����ڶ���λ�õ������������ѭ���������ڶ����������һ�����Ƚ�Ϊֹ��
+ * 选择排序 基本思想：在要排序的一组数中，选出最小的一个数与第一个位置的数交换；
+ * 然后在剩下的数当中再找最小的与第二个位置的数交换，如此循环到倒数第二个数和最后一个数比较为止。
  * <p/>
  * <p>
- * @author ������
+ * @author 刘新宇
  *
  * <p>
- * @date 2015��2��6�� ����2:45:30
+ * @date 2015年2月6日 下午2:45:30
  * <p>
  * @version 0.0.1
  */
 public class SelectSort {
 	private static void select(int array[]) {
-		
-		// Ĭ��Ѱ����Сֵ��λ��
+
+		// 默认寻找最小值的位置
 		int position = 0;
 		for (int i = 0; i < array.length; i++) {
 			int j = i + 1;
 			position = i;
-			// ��Ѱ���滻Ŀ��洢
+			// 将寻找替换目标存储
 			int temp = array[i];
 			for (; j < array.length; j++) {
-				// Ѱ����С��Ԫ���滻λ��
+				// 寻找最小的元素替换位置
 				if (array[j] < temp) {
 					temp = array[j];
 					position = j;
 				}
-			}	
+			}
 			array[position] = array[i];
 			array[i] = temp;
 		}
@@ -49,5 +49,5 @@ public class SelectSort {
 		long end = System.currentTimeMillis();
 		System.out.println(end - begin);
 	}
-	
+
 }

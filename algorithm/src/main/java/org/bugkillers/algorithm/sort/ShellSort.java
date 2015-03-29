@@ -3,15 +3,15 @@ package org.bugkillers.algorithm.sort;
 import java.util.Arrays;
 
 /**
- * Ï£¶ûÅÅÐò »ù±¾Ë¼Ïë£ºËã·¨ÏÈ½«ÒªÅÅÐòµÄÒ»×éÊý°´Ä³¸öÔöÁ¿d£¨n/2,nÎªÒªÅÅÐòÊýµÄ¸öÊý£©·Ö³ÉÈô¸É×é£¬Ã¿×éÖÐ¼ÇÂ¼µÄÏÂ±êÏà²îd.¶ÔÃ¿×éÖÐÈ«²¿ÔªËØ½øÐÐÖ±½Ó²åÈëÅÅÐò£¬
- * È»ºóÔÙÓÃÒ»¸ö½ÏÐ¡µÄÔöÁ¿£¨d/2£©¶ÔËü½øÐÐ·Ö×é£¬ÔÚÃ¿×éÖÐÔÙ½øÐÐÖ±½Ó²åÈëÅÅÐò¡£µ±ÔöÁ¿¼õµ½1Ê±£¬½øÐÐÖ±½Ó²åÈëÅÅÐòºó£¬ÅÅÐòÍê³É¡£
+ * å¸Œå°”æŽ’åº åŸºæœ¬æ€æƒ³ï¼šç®—æ³•å…ˆå°†è¦æŽ’åºçš„ä¸€ç»„æ•°æŒ‰æŸä¸ªå¢žé‡dï¼ˆn/2,nä¸ºè¦æŽ’åºæ•°çš„ä¸ªæ•°ï¼‰åˆ†æˆè‹¥å¹²ç»„ï¼Œæ¯ç»„ä¸­è®°å½•çš„ä¸‹æ ‡ç›¸å·®d.å¯¹æ¯ç»„ä¸­å…¨éƒ¨å…ƒç´ è¿›è¡Œç›´æŽ¥æ’å…¥æŽ’åºï¼Œ
+ * ç„¶åŽå†ç”¨ä¸€ä¸ªè¾ƒå°çš„å¢žé‡ï¼ˆd/2ï¼‰å¯¹å®ƒè¿›è¡Œåˆ†ç»„ï¼Œåœ¨æ¯ç»„ä¸­å†è¿›è¡Œç›´æŽ¥æ’å…¥æŽ’åºã€‚å½“å¢žé‡å‡åˆ°1æ—¶ï¼Œè¿›è¡Œç›´æŽ¥æ’å…¥æŽ’åºåŽï¼ŒæŽ’åºå®Œæˆã€‚
  * <p/>
  * <p>
- * 
- * @author ÁõÐÂÓî
+ *
+ * @author åˆ˜æ–°å®‡
  *
  *         <p>
- * @date 2015Äê2ÔÂ6ÈÕ ÏÂÎç12:00:51
+ * @date 2015å¹´2æœˆ6æ—¥ ä¸‹åˆ12:00:51
  *       <p>
  * @version 0.0.1
  */
@@ -44,7 +44,7 @@ public class ShellSort {
 				62, 99, 98, 54, 56, 17, 18, 23, 34, 15, 35, 25, 53, 51 };
 		sort(array);
 	}
-	
+
 	private static void sort(int array[]){
 		long begin = System.currentTimeMillis();
 		shell(array);

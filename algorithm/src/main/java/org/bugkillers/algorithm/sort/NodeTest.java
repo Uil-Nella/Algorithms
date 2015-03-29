@@ -16,7 +16,7 @@ public class NodeTest {
 	public NodeTest excute() {
 		try {
 			for (Class clazz : classes) {
-				// 访问私有方法
+				// 璁块棶绉佹湁鏂规硶
 				Method m = clazz.getDeclaredMethod("sort", int[].class);
 				m.setAccessible(true);
 				m.invoke(clazz.newInstance(), new int[] { 49, 38, 65, 97, 76,

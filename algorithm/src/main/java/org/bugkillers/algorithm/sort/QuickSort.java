@@ -3,48 +3,48 @@ package org.bugkillers.algorithm.sort;
 import java.util.Arrays;
 
 /**
- * ¿ìËÙÅÅĞò 
- * »ù±¾Ë¼Ïë£ºÑ¡ÔñÒ»¸ö»ù×¼ÔªËØ,Í¨³£Ñ¡ÔñµÚÒ»¸öÔªËØ»òÕß×îºóÒ»¸öÔªËØ,Í¨¹ıÒ»ÌËÉ¨Ãè£¬½«´ıÅÅĞòÁĞ·Ö³ÉÁ½²¿·Ö,Ò»²¿·Ö±È»ù×¼ÔªËØĞ¡,Ò»²¿·Ö´óÓÚµÈÓÚ»ù×¼ÔªËØ,
- * ´ËÊ±»ù×¼ÔªËØÔÚÆäÅÅºÃĞòºóµÄÕıÈ·Î»ÖÃ,È»ºóÔÙÓÃÍ¬ÑùµÄ·½·¨µİ¹éµØÅÅĞò»®·ÖµÄÁ½²¿·Ö¡£
- * ×î»µÇé¿öµÄÊ±¼ä¸´ÔÓ¶ÈÎªO(n2)£¬×îºÃÇé¿öÊ±¼ä¸´ÔÓ¶ÈÎªO(nlog2n)
+ * å¿«é€Ÿæ’åº
+ * åŸºæœ¬æ€æƒ³ï¼šé€‰æ‹©ä¸€ä¸ªåŸºå‡†å…ƒç´ ,é€šå¸¸é€‰æ‹©ç¬¬ä¸€ä¸ªå…ƒç´ æˆ–è€…æœ€åä¸€ä¸ªå…ƒç´ ,é€šè¿‡ä¸€è¶Ÿæ‰«æï¼Œå°†å¾…æ’åºåˆ—åˆ†æˆä¸¤éƒ¨åˆ†,ä¸€éƒ¨åˆ†æ¯”åŸºå‡†å…ƒç´ å°,ä¸€éƒ¨åˆ†å¤§äºç­‰äºåŸºå‡†å…ƒç´ ,
+ * æ­¤æ—¶åŸºå‡†å…ƒç´ åœ¨å…¶æ’å¥½åºåçš„æ­£ç¡®ä½ç½®,ç„¶åå†ç”¨åŒæ ·çš„æ–¹æ³•é€’å½’åœ°æ’åºåˆ’åˆ†çš„ä¸¤éƒ¨åˆ†ã€‚
+ * æœ€åæƒ…å†µçš„æ—¶é—´å¤æ‚åº¦ä¸ºO(n2)ï¼Œæœ€å¥½æƒ…å†µæ—¶é—´å¤æ‚åº¦ä¸ºO(nlog2n)
  * <p/>
  * <p>
- * 
- * @author ÁõĞÂÓî
+ *
+ * @author åˆ˜æ–°å®‡
  *
  *         <p>
- * @date 2015Äê2ÔÂ6ÈÕ ÏÂÎç3:05:00
+ * @date 2015å¹´2æœˆ6æ—¥ ä¸‹åˆ3:05:00
  *       <p>
  * @version 0.0.1
  */
 public class QuickSort {
 
 	public static int getMiddle(int[] array, int low, int high) {
-		int tmp = array[low]; // Êı×éµÄµÚÒ»¸ö×÷ÎªÖĞÖá
+		int tmp = array[low]; // æ•°ç»„çš„ç¬¬ä¸€ä¸ªä½œä¸ºä¸­è½´
 		while (low < high) {
 			while (low < high && array[high] >= tmp) {
 				high--;
 			}
-			array[low] = array[high]; // ±ÈÖĞÖáĞ¡µÄ¼ÇÂ¼ÒÆµ½µÍ¶Ë
+			array[low] = array[high]; // æ¯”ä¸­è½´å°çš„è®°å½•ç§»åˆ°ä½ç«¯
 			while (low < high && array[low] <= tmp) {
 				low++;
 			}
-			array[high] = array[low]; // ±ÈÖĞÖá´óµÄ¼ÇÂ¼ÒÆµ½¸ß¶Ë
+			array[high] = array[low]; // æ¯”ä¸­è½´å¤§çš„è®°å½•ç§»åˆ°é«˜ç«¯
 		}
-		array[low] = tmp; // ÖĞÖá¼ÇÂ¼µ½Î²
-		return low; // ·µ»ØÖĞÖáµÄÎ»ÖÃ
+		array[low] = tmp; // ä¸­è½´è®°å½•åˆ°å°¾
+		return low; // è¿”å›ä¸­è½´çš„ä½ç½®
 	}
 
 	public static void _quickSort(int[] array, int low, int high) {
 		if (low < high) {
-			int middle = getMiddle(array, low, high); // ½«listÊı×é½øĞĞÒ»·ÖÎª¶ş
-			_quickSort(array, low, middle - 1); // ¶ÔµÍ×Ö±í½øĞĞµİ¹éÅÅĞò
-			_quickSort(array, middle + 1, high); // ¶Ô¸ß×Ö±í½øĞĞµİ¹éÅÅĞò
+			int middle = getMiddle(array, low, high); // å°†listæ•°ç»„è¿›è¡Œä¸€åˆ†ä¸ºäºŒ
+			_quickSort(array, low, middle - 1); // å¯¹ä½å­—è¡¨è¿›è¡Œé€’å½’æ’åº
+			_quickSort(array, middle + 1, high); // å¯¹é«˜å­—è¡¨è¿›è¡Œé€’å½’æ’åº
 		}
 	}
 
 	public static void quick(int[] array) {
-		if (array.length > 0) { // ²é¿´Êı×éÊÇ·ñÎª¿Õ
+		if (array.length > 0) { // æŸ¥çœ‹æ•°ç»„æ˜¯å¦ä¸ºç©º
 			_quickSort(array, 0, array.length - 1);
 		}
 		System.out.println(Arrays.toString(array));

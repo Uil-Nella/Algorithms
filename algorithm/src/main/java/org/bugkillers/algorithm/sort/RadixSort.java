@@ -5,21 +5,21 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * »ùÊıÅÅĞò »ù±¾Ë¼Ïë£º½«ËùÓĞ´ı±È½ÏÊıÖµ£¨ÕıÕûÊı£©Í³Ò»ÎªÍ¬ÑùµÄÊıÎ»³¤¶È£¬ÊıÎ»½Ï¶ÌµÄÊıÇ°Ãæ²¹Áã¡£È»ºó£¬´Ó×îµÍÎ»¿ªÊ¼£¬ÒÀ´Î½øĞĞÒ»´ÎÅÅĞò¡£
- * ÕâÑù´Ó×îµÍÎ»ÅÅĞòÒ»Ö±µ½×î¸ßÎ»ÅÅĞòÍê³ÉÒÔºó,ÊıÁĞ¾Í±ä³ÉÒ»¸öÓĞĞòĞòÁĞ¡£
+ * åŸºæ•°æ’åº åŸºæœ¬æ€æƒ³ï¼šå°†æ‰€æœ‰å¾…æ¯”è¾ƒæ•°å€¼ï¼ˆæ­£æ•´æ•°ï¼‰ç»Ÿä¸€ä¸ºåŒæ ·çš„æ•°ä½é•¿åº¦ï¼Œæ•°ä½è¾ƒçŸ­çš„æ•°å‰é¢è¡¥é›¶ã€‚ç„¶åï¼Œä»æœ€ä½ä½å¼€å§‹ï¼Œä¾æ¬¡è¿›è¡Œä¸€æ¬¡æ’åºã€‚
+ * è¿™æ ·ä»æœ€ä½ä½æ’åºä¸€ç›´åˆ°æœ€é«˜ä½æ’åºå®Œæˆä»¥å,æ•°åˆ—å°±å˜æˆä¸€ä¸ªæœ‰åºåºåˆ—ã€‚
  * <p/>
  * <p>
- * @author ÁõĞÂÓî
+ * @author åˆ˜æ–°å®‡
  *
  * <p>
- * @date 2015Äê2ÔÂ6ÈÕ ÏÂÎç3:23:06
+ * @date 2015å¹´2æœˆ6æ—¥ ä¸‹åˆ3:23:06
  * <p>
  * @version 0.0.1
  */
 public class RadixSort {
 
 	public static void radix(int[] array) {
-		// Ê×ÏÈÈ·¶¨ÅÅĞòµÄÌËÊı;
+		// é¦–å…ˆç¡®å®šæ’åºçš„è¶Ÿæ•°;
 		int max = array[0];
 		for (int i = 1; i < array.length; i++) {
 			if (array[i] > max) {
@@ -27,30 +27,30 @@ public class RadixSort {
 			}
 		}
 		int time = 0;
-		// ÅĞ¶ÏÎ»Êı;
+		// åˆ¤æ–­ä½æ•°;
 		while (max > 0) {
 			max /= 10;
 			time++;
 		}
-		// ½¨Á¢10¸ö¶ÓÁĞ;
+		// å»ºç«‹10ä¸ªé˜Ÿåˆ—;
 		List<ArrayList> queue = new ArrayList<ArrayList>();
 		for (int i = 0; i < 10; i++) {
 			ArrayList<Integer> queue1 = new ArrayList<Integer>();
 			queue.add(queue1);
 		}
-		// ½øĞĞtime´Î·ÖÅäºÍÊÕ¼¯;
+		// è¿›è¡Œtimeæ¬¡åˆ†é…å’Œæ”¶é›†;
 		for (int i = 0; i < time; i++) {
-			// ·ÖÅäÊı×éÔªËØ;
+			// åˆ†é…æ•°ç»„å…ƒç´ ;
 			for (int j = 0; j < array.length; j++) {
-				// µÃµ½Êı×ÖµÄµÚtime+1Î»Êı;
+				// å¾—åˆ°æ•°å­—çš„ç¬¬time+1ä½æ•°;
 				int x = array[j] % (int) Math.pow(10, i + 1)
 						/ (int) Math.pow(10, i);
 				ArrayList<Integer> queue2 = queue.get(x);
 				queue2.add(array[j]);
 				queue.set(x, queue2);
 			}
-			int count = 0;// ÔªËØ¼ÆÊıÆ÷;
-			// ÊÕ¼¯¶ÓÁĞÔªËØ;
+			int count = 0;// å…ƒç´ è®¡æ•°å™¨;
+			// æ”¶é›†é˜Ÿåˆ—å…ƒç´ ;
 			for (int k = 0; k < 10; k++) {
 				while (queue.get(k).size() > 0) {
 					ArrayList<Integer> queue3 = queue.get(k);
