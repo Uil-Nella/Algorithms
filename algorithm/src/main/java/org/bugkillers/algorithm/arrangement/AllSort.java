@@ -1,38 +1,38 @@
 package org.bugkillers.algorithm.arrangement;
 
 /**
- * È«ÅÅÁĞ--JavaÊµÏÖ
+ * å…¨æ’åˆ—--Javaå®ç°
  * <p/>
- * <p> @author ÁõĞÂÓî
+ * <p> @author åˆ˜æ–°å®‡
  *
- * <p> @date 2015Äê2ÔÂ9ÈÕ ÏÂÎç7:15:51
+ * <p> @date 2015å¹´2æœˆ9æ—¥ ä¸‹åˆ7:15:51
  * <p> @version 0.0.1
  */
-public class AllSort{  
-    public static void main(String[] args) {  
-        char buf[]={'a','b','c','d','e'}; 
+public class AllSort{
+    public static void main(String[] args) {
+        char buf[]={'a','b','c','d','e'};
 
-        perm(buf,0,buf.length-1);  
-    }  
-    public static void perm(char[] buf,int start,int end){  
-        if(start==end){//µ±Ö»ÒªÇó¶ÔÊı×éÖĞÒ»¸ö×ÖÄ¸½øĞĞÈ«ÅÅÁĞÊ±£¬Ö»Òª¾Í°´¸ÃÊı×éÊä³ö¼´¿É£¨ÌØÊâÇé¿ö£©  
-            for(int i=0;i<=end;i++){  
-                System.out.print(buf[i]);  
-            }  
-            System.out.println();     
-        }  
-        else{//¶à¸ö×ÖÄ¸È«ÅÅÁĞ£¨ÆÕ±éÇé¿ö£© 
-            for(int i=start;i<=end;i++){//£¨ÈÃÖ¸Õëstart·Ö±ğÖ¸ÏòÃ¿Ò»¸öÊı£© 
-                char temp=buf[start];//½»»»Êı×éµÚÒ»¸öÔªËØÓëºóĞøµÄÔªËØ  
-                buf[start]=buf[i];  
-                buf[i]=temp;  
-                  
-                perm(buf,start+1,end);//ºóĞøÔªËØµİ¹éÈ«ÅÅÁĞ  
-                  
-                temp=buf[start];//½«½»»»ºóµÄÊı×é»¹Ô­  
-                buf[start]=buf[i];  
-                buf[i]=temp;  
-            }  
-        }  
-    }  
+        perm(buf,0,buf.length-1);
+    }
+    public static void perm(char[] buf,int start,int end){
+        if(start==end){//å½“åªè¦æ±‚å¯¹æ•°ç»„ä¸­ä¸€ä¸ªå­—æ¯è¿›è¡Œå…¨æ’åˆ—æ—¶ï¼Œåªè¦å°±æŒ‰è¯¥æ•°ç»„è¾“å‡ºå³å¯ï¼ˆç‰¹æ®Šæƒ…å†µï¼‰  
+            for(int i=0;i<=end;i++){
+                System.out.print(buf[i]);
+            }
+            System.out.println();
+        }
+        else{//å¤šä¸ªå­—æ¯å…¨æ’åˆ—ï¼ˆæ™®éæƒ…å†µï¼‰ 
+            for(int i=start;i<=end;i++){//ï¼ˆè®©æŒ‡é’ˆstartåˆ†åˆ«æŒ‡å‘æ¯ä¸€ä¸ªæ•°ï¼‰ 
+                char temp=buf[start];//äº¤æ¢æ•°ç»„ç¬¬ä¸€ä¸ªå…ƒç´ ä¸åç»­çš„å…ƒç´   
+                buf[start]=buf[i];
+                buf[i]=temp;
+
+                perm(buf,start+1,end);//åç»­å…ƒç´ é€’å½’å…¨æ’åˆ—  
+
+                temp=buf[start];//å°†äº¤æ¢åçš„æ•°ç»„è¿˜åŸ  
+                buf[start]=buf[i];
+                buf[i]=temp;
+            }
+        }
+    }
 }
