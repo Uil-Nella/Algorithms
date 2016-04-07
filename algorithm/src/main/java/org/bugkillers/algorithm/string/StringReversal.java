@@ -54,8 +54,6 @@ public class StringReversal {
         }
 
         return new String(chars);
-
-
     }
 
     /**
@@ -66,8 +64,6 @@ public class StringReversal {
      */
     public static String reverse03(String source) {
         return new StringBuffer(source).reverse().toString();
-
-
     }
 
     /**
@@ -86,7 +82,6 @@ public class StringReversal {
 
         String left = source.substring(0, length / 2);
         String right = source.substring(length / 2, length);
-
 
         return reverse04(right) + reverse04(left);
     }
